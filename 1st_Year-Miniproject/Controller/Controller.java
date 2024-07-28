@@ -21,7 +21,7 @@ import View.Main;
 import View.Print;
 
 public class Controller {
-    private static final String JSON_FILE_PATH = "1st_Year-Miniproject/Model/JSON/Pass.json";
+    private static final String JSON_FILE_PATH = "1st_year_Miniproject/1st_Year-Miniproject/Model/JSON/Pass.json";
 
     public void add_json(Tickets buyer) throws IOException {
         if (buyer.getDuration() != 0) {
@@ -52,7 +52,7 @@ public class Controller {
             }
         } else {
             try {
-                BufferedReader br = new BufferedReader(new FileReader("1st_Year-Miniproject/Model/JSON/TripsOnPrice.json"));
+                BufferedReader br = new BufferedReader(new FileReader("1st_year_Miniproject/1st_Year-Miniproject/Model/JSON/TripsOnPrice.json"));
                 String line;
                 
                 if ((line = br.readLine()) != null) {
@@ -65,7 +65,7 @@ public class Controller {
                 int total_coll = ((Long) jsonObject.get("Total_Collection")).intValue();
                 jsonObject.put(count, intcount+1);
                 jsonObject.put("Total_Collection", total_coll+buyer.getPrice());
-                FileWriter file = new FileWriter("1st_Year-Miniproject/Model/JSON/TripsOnPrice.json");
+                FileWriter file = new FileWriter("1st_year_Miniproject/1st_Year-Miniproject/Model/JSON/TripsOnPrice.json");
                         file.write(jsonObject.toJSONString() + "\n");
                         file.flush();
                         file.close();
@@ -81,7 +81,7 @@ public class Controller {
 
     public static void getit(String key, String data,JFrame Main_win , JPanel Main){
         try {
-         BufferedReader br = new BufferedReader(new FileReader("1st_Year-Miniproject/Model/JSON/Pass.json"));
+         BufferedReader br = new BufferedReader(new FileReader("1st_year_Miniproject/1st_Year-Miniproject/Model/JSON/Pass.json"));
          String line;
          boolean done = false;
          while ((line = br.readLine()) != null) {
@@ -129,7 +129,7 @@ public class Controller {
         ArrayList<Tickets> ticketList = new ArrayList<>();
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader("1st_Year-Miniproject/Model/JSON/Pass.json"));
+            BufferedReader br = new BufferedReader(new FileReader("1st_year_Miniproject/1st_Year-Miniproject/Model/JSON/Pass.json"));
             String line;
 
             while ((line = br.readLine()) != null) {
@@ -168,7 +168,7 @@ public class Controller {
         JSONObject jsonObject = new JSONObject() ;
         ArrayList<JSONObject> updatedObjects = new ArrayList<>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader("1st_Year-Miniproject/Model/JSON/Pass.json"));
+            BufferedReader br = new BufferedReader(new FileReader("1st_year_Miniproject/1st_Year-Miniproject/Model/JSON/Pass.json"));
             
             String line;
             while ((line = br.readLine()) != null) {
@@ -206,7 +206,7 @@ public class Controller {
         JSONObject jsonObject = new JSONObject() ;
         ArrayList<JSONObject> updatedObjects = new ArrayList<>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader("1st_Year-Miniproject/Model/JSON/Pass.json"));
+            BufferedReader br = new BufferedReader(new FileReader("1st_year_Miniproject/1st_Year-Miniproject/Model/JSON/Pass.json"));
             
             String line;
             while ((line = br.readLine()) != null) {
